@@ -1,0 +1,106 @@
+openapi: 3.0.0
+
+info:
+  description: API for managing animals
+  version: 1.0.0
+  title: Animal API
+
+basePath: /animal
+
+paths:
+  /animal:
+    post:
+      summary: Create a new animal
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Name of the animal
+                image:
+                  type: string
+                  description: URL or path to the animal's image
+                description:  # Renamed field (optional)
+                  type: string
+                  description: Description of the animal
+                category:
+                  type: string
+                  description: Category of the animal (e.g., dog, cat)
+                dateOfBirth:
+                  type: string
+                  description: Date of birth of the animal (YYYY-MM-DD)
+                status:
+                  type: boolean
+                  description: Whether the animal is available (true) or not (false)
+      responses:
+        '200':
+          description: Animal created successfully
+        '500':
+          description: Internal server error
+
+    get:
+      summary: Get all animals
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Animal'
+    put:
+      summary: Update the status of an animal
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  description: ID of the animal to update
+                status:
+                  type: boolean
+                  description: New status of the animal (true or false)
+      responses:
+        '200':
+          description: Animal updated successfully
+        '400':
+          description: Bad request (missing required fields)
+        '404':
+          description: Animal not found
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    Animal:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: ID of the animal (auto-generated)
+        name:
+          type: string
+          description: Name of the animal
+        image:
+          type: string
+          description: URL or path to the animal's image
+        description:  # Renamed field (optional)
+          type: string
+          description: Description of the animal
+        category:
+          type: string
+          description: Category of the animal (e.g., dog, cat)
+        dateOfBirth:
+          type: string
+          description: Date of birth of the animal (YYYY-MM-DD)
+        status:
+          type: boolean
+          description: Whether the animal is available (true) or not (false)
