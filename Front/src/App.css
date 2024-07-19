@@ -1,0 +1,181 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('Comfortaa.ttf') format('truetype');
+}
+
+body, button, select, input {
+    display: flex;
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.5em;
+    color: #050e25;
+}
+
+aside {
+    font-size: 120%;
+    height: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+    position: fixed;
+    width: 6em;
+    border-right: 2px solid #ccc;
+}
+
+a {
+    color: #050e25;    
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+input {
+    font-size: .8em;
+    margin-left: 2em;
+    margin-bottom: 1em;
+    width: 18em;
+    text-align: center;
+    [type="radio"] {
+        width: 1em;
+    }
+}
+
+input[type="radio"] {
+    width: 1em;
+    margin-right: 2em;
+}
+
+input[type="date"] {
+    width: 10em;
+    margin-left: 6em;
+}
+
+input:disabled {
+    background-color: #ffffff;
+    border: 0px;
+}
+
+label {
+    margin-bottom: 1em;
+    width: 6em;
+}
+
+button {
+    font-size: 1em;
+    justify-content: center;
+    width: fit-content;
+    margin-left: 4em;
+}
+
+h1 {
+    font-size: 2em;
+    margin-left: 10em;
+}
+
+h2 {
+    font-size: 2em;
+    margin-left: 4em;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    width: 50%;
+    margin-left: 19em;
+}
+
+.grid {
+    width: 50%;
+    margin-left: 10em;
+}
+
+footer {
+    display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+.flexbox, .adotabox {
+    display: flex;
+    align-items: flex-start;
+}
+
+.flexbox {
+    margin-left: 3em;
+}
+
+.logo {
+    width: 2em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+  
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 1020px) {
+    h1   {margin-left: 7em;}
+    h2   {margin-left: 1em;}
+    form {margin-left: 13em;}
+    .grid {margin-left: 8em;}
+}
+
+@media (max-width: 768px) {
+    h1   {margin-left: 1.5em;}
+    h2   {margin-left: 0.5em;}
+    form, {margin-left: 2em;}
+    .grid {margin-left: 0em;}
+    aside {display: none;}
+    footer {display: block;}
+    button {margin-left: 0;}
+    input {width: 15em;}
+    input[type="date"] {margin-left: 4em;}
+    input[type="radio"] {margin-right: 1em;}
+    .flexbox {margin-left: 2em;}
+}
